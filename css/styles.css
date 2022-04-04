@@ -1,0 +1,15 @@
+.optionBar{
+	text-align:right;
+	margin-top: 15px;
+}
+
+.optionBar a{	
+	margin-right:50px;
+	display: inline-block;
+    font-size: 13pt;
+	font-weight: bold;
+}
+
+.optionBar a:link{
+	text-decoration: none;	
+}
