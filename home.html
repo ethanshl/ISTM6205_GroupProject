@@ -7,11 +7,17 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+		<script>window.jQuery || document.write('<script src="path/to/jquery-3.5.0.js"><\/script>')</script>
 		
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+		<script src="js/javaScript.js"></script>
 		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/zebra_datepicker.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/default/zebra_datepicker.min.css">
+
 
 		<title>Parking System Home</title>
 	</head>
@@ -54,28 +60,38 @@
 			      <option>South Garages</option>
 			      <option>B Garages</option>
 			      <option>C Garages</option>
-			      <option>D Garages</option>
+			      <option>D Garages</option> 
 			      <option>E Garages</option>
 			    </select>
 			  </div>
 			  
 			  <div class="form-group">
+				  <label for="starttime">From</label>
+				  <input type="datetime-local" id="starttime" name="starttime">
+			  </div>
+			  
+			  <div class="form-group">
+			  	   <label for="endtime">To</label>
+			  	   <input type="datetime-local" id="endtime" name="endtime">
+			  </div>
+			  
+<!-- 			  <div class="form-group">
 				  <div class="input-group date" id="datetimepicker1">
 					  <input type='text' class="form-control" />
 					    <span class="input-group-addon">
 						  <span class="glyphicon glyphicon-calendar"></span>
 					    </span>
 				  </div>
-			  </div>
+			  </div> -->
 
 			<button type="search" class="btn btn-primary">Search</button>
 		</form>
 		
-		<script type="text/javascript">
+<!-- 		<script type="text/javascript">
 			$(function() {
 				$('#datetimepicker1').datetimepicker();
 			});
-		</script>			
+		</script>	 -->		
 
 
 	</body>
