@@ -1,8 +1,5 @@
-
-var garage;
-
 function storeTimeGarage() {
-    garage = document.getElementById("garageSelect").value;
+  var garage = document.getElementById("garageSelect").value;
 	var dateString = document.getElementById("startTime").value;
 	var dateString2 = document.getElementById("endTime").value;
 
@@ -12,7 +9,13 @@ function storeTimeGarage() {
 	var startTime =  DateStart.toLocaleTimeString();
 	var endDate =  DateEnd.toLocaleDateString();
 	var endTime =  DateEnd.toLocaleTimeString();
+  
+  var startDateTime = startDate + " " + startTime;
+  var endDateTime = endDate + " " + endTime;
 
+	localStorage.setItem("garage", garage);
+	localStorage.setItem("startDateTime", startDateTime);
+	localStorage.setItem("endDateTime", endDateTime);
 	
 };
 
@@ -26,4 +29,5 @@ function checkDate() {
     return false;
   }
   return true;
-}
+};
+
