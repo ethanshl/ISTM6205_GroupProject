@@ -1,5 +1,5 @@
 function storeTimeGarage() {
-  var garage = document.getElementById("garageSelect").value;
+    var garage = document.getElementById("garageSelect").value;
 	var dateString = document.getElementById("startTime").value;
 	var dateString2 = document.getElementById("endTime").value;
 
@@ -25,8 +25,10 @@ function checkDate() {
 	var DateStart = new Date(dateString);
 	var DateEnd = new Date(dateString2);
   if (DateEnd < DateStart) {
-    alert("End date cannot be less than Start date.");
-    return false;
+	  alert("End date cannot be less than Start date.");
+	  document.getElementById('#endTime').value = "";
+	  return false;
+	 
   }
   return true;
 };

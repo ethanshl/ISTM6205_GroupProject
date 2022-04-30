@@ -23,98 +23,132 @@
 	<body>
 		<header>
 			<div>
+
 				<div class="container-fluid">
 					<div>
 						<h3 class="display-4">GWU Parking System</h3>
 					</div>
-<!-- 					<div class="optionBar">
-						<a href="#">Manage My Account</a>
-						<a href="#">Log Out</a>
-					</div> -->
 
 				</div>
+				<img src="images\BAS_Parking hero_1920x400.jpg" alt="GWU Garage" />
 			</div>
 		</header>
 
 		<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-					<a class="nav-link" href="#">Settings</a>
-				</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="#">Settings</a>
 			</div>
-		</nav> -->
+		</div>
+	</nav> -->
 
-		<div class=" pt-4 jumbotron jumbotron-fluid">
+		<div class="pt-4">
 			<div class="container">
 				<div id="garageName">
-					<h3 class="display-5">Garage</h3>
-			    </div>
-			    </br>
-				<form class="needs-validation" novalidate>
-					<div class="form-group row">
-						<div class="col">
-							<label for="garageSelect">Choose the Garage</label>
-							<select class="form-control" id="garageSelect" required>
-								<option selected disabled hidden></option>
-			                    <option>South Hall Garage</option>
-			                    <option>Eliot School Garage</option>
-			                    <option>Mark Shenkmen Hall Garage</option>
-			                    <option>University Stundent Center Garage</option> 
-			                </select>
-			                <div class="invalid-feedback">
-			                	Please select a garage.
-			                </div>
-			            </div>
-			        </div>
+					<h3 class="display-5">Select your parking space: </h3>
+				</div>
+				<hr />
+				<a href="home.html">← Back to the Previous Page</a>
 
-			        <div class="row">
-			        	<div class="form-group col">
-			        		<label for="starttime">Enter After</label>
-			        		<input type="datetime-local" id="startTime" class="form-control" name="startTime" required onchange="checkDate()">
-			        		<div class="invalid-feedback">
-			        			Please select arrival date and time.
-			        		</div>
-			        	</div>
+				<div class="row">
+					<div class="col">
+						<div class="post-container">
+							<div class="post-thumb"><img src="images\sedan.png" /></div>
+							<div class="post-content">
+								<h3 class="post-title">Standard Parking<span style="float:right; padding-right:10px;">$10/hr</span></h3>
+								<p><span>Size: </span>8' x 12'</p>
+								<p><span>Available Spaces: </span>1</p>
+								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
-			        	<div class="form-group col">
-			        		<label for="endtime">Exit Before</label>
-			        		<input type="datetime-local" id="endTime"  class="form-control" name="endTime" required onchange="checkDate()">
-			        		<div class="invalid-feedback">
-			        			Please select departure date and time.
-			        		</div>
-			        	</div>
-			        </div>
+				</br>
 
-			        <div class="homeButton">
-			        	<button onclick="storeTimeGarage()" type="search" class="btn btn-primary">Search</button>
-			        </div>
-			    </form>
+				<div class="row">
+					<div class="col">
+						<div class="post-container">
+							<div class="post-thumb"><img src="images\pickup.png" /></div>
+							<div class="post-content">
+								<h3 class="post-title">XL Parking<span style="float:right; padding-right:10px;">$15/hr</span></h3>
+								<p><span>Size: </span>15' x 30'</p>
+								<p><span>Available Spaces: </span>1</p>
+								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				</br>
+
+				<div class="row">
+					<div class="col">
+						<div class="post-container">
+							<div class="post-thumb"><img src="images\handicap.png" /></div>
+							<div class="post-content">
+								<h3 class="post-title">Accessible Parking<span style="float:right; padding-right:10px;">$7/hr</span></h3>
+								<p><span>Size: </span>9' x 13'</p>
+								<p><span>Available Spaces: </span>1</p>
+								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="wow fadeInUp" data-wow-delay="0.4s">
-				<div id="google-map">
-					<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Hz2MLqzJ90IacvlszfgTOZit8en0GmX0&ehbc=2E312F" width="1110" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					</div>
-			</div>    
+		</br>
+
+		<!-- Modal -->
+		<div id="myModal" class="modal">
+
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<hr>
+				<p>Vehicle infomation:</p>
+
+				<footer>
+					<button type="button" class="btn btn-primary">Submit</button>
+				</footer>
+			</div>
 		</div>
 
+
 		<script>
-			document.getElementById("garageName").innerHTML = localStorage.getItem("garage");
+			/*document.getElementById("garageName").innerHTML = localStorage.getItem("garage");*/
+			var modal = document.getElementById("myModal");
 
-        </script>
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
 
-        <footer class="footer">
-        	<div class="container">
-        		<span class="text-muted">6205 Group 2</span>
-        	</div>
-        </footer>
+			// When the user clicks on the button, open the modal
+			function OpenModel() {
+				modal.style.display = "block";
+			}
 
-    </body>
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function () {
+				modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+
+		</script>
+
+		<footer>
+			<p>6205 Group 2</p>
+		</footer>
+
+	</body>
 </html>
