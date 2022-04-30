@@ -10,12 +10,13 @@ function storeTimeGarage() {
 	var endDate =  DateEnd.toLocaleDateString();
 	var endTime =  DateEnd.toLocaleTimeString();
   
-  var startDateTime = startDate + " " + startTime;
-  var endDateTime = endDate + " " + endTime;
+    var startDateTime = startDate + " " + startTime;
+    var endDateTime = endDate + " " + endTime;
 
 	localStorage.setItem("garage", garage);
 	localStorage.setItem("startDateTime", startDateTime);
 	localStorage.setItem("endDateTime", endDateTime);
+	location.href = 'parkingDetails.html';
 	
 };
 
