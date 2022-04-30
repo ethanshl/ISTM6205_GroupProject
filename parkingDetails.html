@@ -62,7 +62,7 @@
 							<div class="post-content">
 								<h3 class="post-title">Standard Parking<span style="float:right; padding-right:10px;">$10/hr</span></h3>
 								<p><span>Size: </span>8' x 12'</p>
-								<p><span>Available Spaces: </span>1</p>
+								<p id="randomNum1"><span>Available Spaces: </span>1</p>
 								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 							<div class="post-content">
 								<h3 class="post-title">XL Parking<span style="float:right; padding-right:10px;">$15/hr</span></h3>
 								<p><span>Size: </span>15' x 30'</p>
-								<p><span>Available Spaces: </span>1</p>
+								<p id="randomNum2"><span>Available Spaces: </span>1</p>
 								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
 							</div>
 						</div>
@@ -95,7 +95,7 @@
 							<div class="post-content">
 								<h3 class="post-title">Accessible Parking<span style="float:right; padding-right:10px;">$7/hr</span></h3>
 								<p><span>Size: </span>9' x 13'</p>
-								<p><span>Available Spaces: </span>1</p>
+								<p id="randomNum3"><span>Available Spaces: </span>1</p>
 								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
 							</div>
 						</div>
@@ -111,16 +111,95 @@
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<hr>
-				<p>Vehicle infomation:</p>
+				<p>Vehicle infomation</p>
+				<div class="container">
+					<form class="needs-validation" novalidate>
+						<div class="form-group row">
+							<div class="col">
+								<label for="mModel">Make & Model: </label>
+								<input type="text" id="mModel" name="mModel" class="form-control" placeholder="Example: Honda Civic">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col">
+								<label for="lPlate">License Plate:</label>
+								<input type="text" id="lPlate" name="licensePlate" class="form-control">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+							<div class="col">
+								<label for="lPlate">State:</label>
+								<input type="text" id="state" name="licensePlateState" class="form-control">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+						</div>
+						<br />
 
-				<footer>
-					<button type="button" class="btn btn-primary">Submit</button>
-				</footer>
+						<hr />
+						<p>Payment Method</p>
+						<div class="form-group row">
+							<div class="col">
+								<label for="cName">Cardholder Name: </label>
+								<input type="text" id="cName" name="cardName" class="form-control">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col">
+								<label for="cNum">Card Number: </label>
+								<input type="text" id="cNum" name="cardNum" class="form-control">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col">
+								<label for="eDate">Expiration Date: </label>
+								<input type="text" id="eDate" name="expireDate" class="form-control" placeholder="MM/YY">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+							<div class="col">
+								<label for="lPlate">CVV/CVC:</label>
+								<input type="text" id="cvv" name="cvv" class="form-control" placeholder="3 digits">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+							<div class="col">
+								<label for="lPlate">Zip Code:</label>
+								<input type="text" id="zip" name="zip" class="form-control" placeholder="5 digits">
+								<div class="invalid-feedback">
+									Please select a garage.
+								</div>
+							</div>
+						</div>
+
+						<div class="homeButton">
+							<button type="submit" onclick="storeTimeGarage(); window.location.href='parkingDetails.html'" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+
 			</div>
 		</div>
 
 
 		<script>
+			document.getElementById("randomNum1").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 101) + "</p>";
+			document.getElementById("randomNum2").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 21) + "</p>";
+            document.getElementById("randomNum3").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 21) + "</p>";
+
 			/*document.getElementById("garageName").innerHTML = localStorage.getItem("garage");*/
 			var modal = document.getElementById("myModal");
 
@@ -142,13 +221,17 @@
 				if (event.target == modal) {
 					modal.style.display = "none";
 				}
-			}
+			};
+
+
+
+
+            
 
 		</script>
 
-		<footer>
-			<p>6205 Group 2</p>
+		<footer class="footer">
+			<p>6205 Group 9</p>
 		</footer>
-
 	</body>
 </html>
