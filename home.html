@@ -13,11 +13,9 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+		
 		<script src="js/javaScript.js"></script>
 		<link rel="stylesheet" href="css/styles.css">
-		<script src="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/zebra_datepicker.min.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/default/zebra_datepicker.min.css">
-
 
 		<title>Parking System Home</title>
 	</head>
@@ -29,16 +27,11 @@
 					<div>
 						<h3 class="display-4">GWU Parking System</h3>
 					</div>
-<!-- 					<div class="optionBar">
-						<a href="#">Manage My Account</a>
-						<a href="#">Log Out</a>
-					</div> -->
-
 				</div>
+
 			</div>
 		</header>
-
-		<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -49,88 +42,87 @@
 					<a class="nav-link" href="#">Settings</a>
 				</div>
 			</div>
-		</nav> -->
+		</nav>
+		<img src="images\BAS_Parking hero_1920x400.jpg" alt="GWU Garage" />
+
 		<div class=" pt-4 jumbotron jumbotron-fluid">
 			<div class="container">
-			<form class="needs-validation" novalidate>
-				
-			  <div class="form-group row">
-				<div class="col">
-			    <label for="garageSelect">Choose the Garage</label>
-			    <select class="form-control" id="garageSelect" required>
-				  <option selected disabled hidden></option>
-			      <option>South Hall Garage</option>
-			      <option>Eliot School Garage</option>
-			      <option>Mark Shenkmen Hall Garage</option>
-			      <option>University Stundent Center Garage</option> 
-			    </select>
-				<div class="invalid-feedback">
-					Please select a garage.
-				</div>
-				</div>
-			  </div>
-			  
-			  <div class="row">
-			  <div class="form-group col">
-				  <label for="starttime">Enter After</label>
-				  <input type="datetime-local" id="startTime" class="form-control" name="startTime" required onchange="checkDate()">
-				  <div class="invalid-feedback">
-				  	Please select arrival date and time.
-				  </div>
-				  </div>
-			  
-			  
-			  <div class="form-group col">
-			  	   <label for="endtime">Exit Before</label>
-			  	   <input type="datetime-local" id="endTime"  class="form-control" name="endTime" required onchange="checkDate()">
-				   <div class="invalid-feedback">
-				   	Please select departure date and time.
-				   </div>
-			  </div>
-			</div>
-			  <div class="homeButton">
-			  <button onclick="storeTimeGarage()" type="search" class="btn btn-primary">Search</button>
-			  </div>
-			  
-			
+				<form class="needs-validation" novalidate>
+					<div class="form-group row">
+						<div class="col">
+							<label for="garageSelect">Choose the Garage</label>
+							<select class="form-control" id="garageSelect" required>
+								<option selected disabled hidden></option>
+								<option>South Hall Garage</option>
+								<option>Eliot School Garage</option>
+								<option>Mark Shenkmen Hall Garage</option>
+								<option>University Stundent Center Garage</option>
+							</select>
+							<div class="invalid-feedback">
+								Please select a garage.
+							</div>
+						</div>
+					</div>
 
-			
-		</form>
+					<div class="row">
+						<div class="form-group col">
+							<label for="starttime">Enter After</label>
+							<input type="datetime-local" id="startTime" class="form-control" name="startTime" required onchange="checkDate()">
+							<div class="invalid-feedback">
+								Please select arrival date and time.
+							</div>
+						</div>
+
+						<div class="form-group col">
+							<label for="endtime">Exit Before</label>
+							<input type="datetime-local" id="endTime" class="form-control" name="endTime" required onchange="checkDate()">
+							<div class="invalid-feedback">
+								Please select departure date and time.
+							</div>
+						</div>
+					</div>
+
+					<div class="homeButton">
+						<button type="submit" onclick="storeTimeGarage(); window.location.href='parkingDetails.html'" class="btn btn-primary">Search</button>
+					</div>
+				</form>
+			</div>
 		</div>
-		</div>
+
 		<div class="container">
 			<div class="wow fadeInUp" data-wow-delay="0.4s">
 				<div id="google-map">
 					<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Hz2MLqzJ90IacvlszfgTOZit8en0GmX0&ehbc=2E312F" width="1110" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-					</div>
-			</div>    
+				</div>
+			</div>
 		</div>
-		
-<script>
-    // Self-executing function
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
+		<br />
+		<script>
+			// Self-executing function
+			(function () {
+				'use strict'
 
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">6205 Group 2</span>
-      </div>
-    </footer>
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				var forms = document.querySelectorAll('.needs-validation')
+
+				// Loop over them and prevent submission
+				Array.prototype.slice.call(forms)
+					.forEach(function (form) {
+						form.addEventListener('submit', function (event) {
+							if (!form.checkValidity()) {
+								event.preventDefault()
+								event.stopPropagation()
+							}
+
+							form.classList.add('was-validated')
+						}, false)
+					})
+			})()
+		</script>
+
+		<footer>
+			<p>6205 Group 2</p>
+		</footer>
+
 	</body>
 </html>
