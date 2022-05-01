@@ -25,11 +25,10 @@ function checkDate() {
 	var dateString2 = document.getElementById("endTime").value;
 	var DateStart = new Date(dateString);
 	var DateEnd = new Date(dateString2);
-  if (DateEnd < DateStart) {
-	  alert("End date cannot be less than Start date.");
-	  document.getElementById('#endTime').value = "";
-	  return false;
-	 
-  }
-  return true;
+	if (DateEnd < DateStart) {
+		alert("End date cannot be less than Start date.");
+		document.getElementById('#endTime').value = "";
+		return false;
+	}
+	return true;
 };

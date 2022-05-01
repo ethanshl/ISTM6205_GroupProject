@@ -113,29 +113,32 @@
 				<hr>
 				<p>Vehicle infomation</p>
 				<div class="container">
-					<form class="needs-validation" novalidate>
+					<form id="paymentForm"class="needs-validation" novalidate>
 						<div class="form-group row">
 							<div class="col">
 								<label for="mModel">Make & Model: </label>
-								<input type="text" id="mModel" name="mModel" class="form-control" placeholder="Example: Honda Civic">
+								<input type="text" id="mModel" name="mModel" class="form-control" placeholder="Example: Honda Civic" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in your vehicle brand and model.
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col">
 								<label for="lPlate">License Plate:</label>
-								<input type="text" id="lPlate" name="licensePlate" class="form-control">
+								<input type="text" id="lPlate" name="licensePlate" class="form-control" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in your license plate number.
 								</div>
 							</div>
 							<div class="col">
 								<label for="lPlate">State:</label>
-								<input type="text" id="state" name="licensePlateState" class="form-control">
+								<input type="text" id="state" name="licensePlateState" class="form-control" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in the state of your license.
 								</div>
 							</div>
 						</div>
@@ -146,49 +149,52 @@
 						<div class="form-group row">
 							<div class="col">
 								<label for="cName">Cardholder Name: </label>
-								<input type="text" id="cName" name="cardName" class="form-control">
+								<input type="text" id="cName" name="cardName" class="form-control" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in cardholder name.
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col">
 								<label for="cNum">Card Number: </label>
-								<input type="text" id="cNum" name="cardNum" class="form-control">
+								<input type="text" id="cNum" name="cardNum" class="form-control" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in the card number.
 								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col">
 								<label for="eDate">Expiration Date: </label>
-								<input type="text" id="eDate" name="expireDate" class="form-control" placeholder="MM/YY">
+								<input type="text" id="eDate" name="expireDate" class="form-control" placeholder="MM/YY" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in the card expiration date.
 								</div>
 							</div>
 							<div class="col">
 								<label for="lPlate">CVV/CVC:</label>
-								<input type="text" id="cvv" name="cvv" class="form-control" placeholder="3 digits">
+								<input type="text" id="cvv" name="cvv" class="form-control" placeholder="3 digits" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in the CVV.
 								</div>
 							</div>
 							<div class="col">
 								<label for="lPlate">Zip Code:</label>
-								<input type="text" id="zip" name="zip" class="form-control" placeholder="5 digits">
+								<input type="text" id="zip" name="zip" class="form-control" placeholder="5 digits" required>
+								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">
-									Please select a garage.
+									Please fill in the zip code.
 								</div>
 							</div>
 						</div>
 
 						<div class="homeButton">
-							<a href="confirmation.html" class="btn btn-primary">Place Order</a>
-							
-
+							<a id="orderButton" class="btn btn-primary">Place Order</a>
 						</div>
 					</form>
 				</div>
@@ -237,6 +243,20 @@
 					modal.style.display = "none";
 				}
 			};
+
+            $("#orderButton").click(function () {
+
+                var form = $("#paymentForm")
+
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.addClass('was-validated');
+                if (form[0].checkValidity() === true) {
+                    location.href = 'confirmation.html'
+                }
+            });
 
 
 
