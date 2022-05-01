@@ -31,7 +31,7 @@
 
 			</div>
 		</header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -42,10 +42,10 @@
 					<a class="nav-link" href="#">Settings</a>
 				</div>
 			</div>
-		</nav>
+		</nav>-->
 		<img src="images\BAS_Parking hero_1920x400.jpg" alt="GWU Garage" />
 
-		<div class=" pt-4 jumbotron jumbotron-fluid">
+		<div class=" p-4 jumbotron jumbotron-fluid ">
 			<div class="container">
 				<form class="needs-validation" novalidate>
 					<div class="form-group row">
@@ -83,7 +83,7 @@
 					</div>
 
 					<div class="homeButton">
-						<button type="submit" onclick="storeTimeGarage()" class="btn btn-primary">Search</button>
+						<a href="parkingDetails.html" onclick="storeTimeGarage();" class="btn btn-primary">Search</a>
 					</div>
 				</form>
 			</div>
@@ -97,32 +97,33 @@
 			</div>
 		</div>
 		<br />
-		<script>
-			// Self-executing function
-			(function () {
-				'use strict'
+		<!--<script>
+		// Self-executing function
+		(function () {
+			'use strict'
 
-				// Fetch all the forms we want to apply custom Bootstrap validation styles to
-				var forms = document.querySelectorAll('.needs-validation')
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
 
-				// Loop over them and prevent submission
-				Array.prototype.slice.call(forms)
-					.forEach(function (form) {
-						form.addEventListener('submit', function (event) {
-							if (!form.checkValidity()) {
-								event.preventDefault()
-								event.stopPropagation()
-							}
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+				.forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+						if (!form.checkValidity()) {
+							event.preventDefault()
+							event.stopPropagation()
+						}
 
-							form.classList.add('was-validated')
-						}, false)
-					})
-			})()
-		</script>
+						form.classList.add('was-validated')
+					}, false)
+				})
+		})()
+	</script>-->
 
-		<footer class="footer">
-			<p>6205 Group 9</p>
-		</footer>
+
+	<div class="footer">
+		<p>6205 Group 9</p>
+	</div>
 
 	</body>
 </html>

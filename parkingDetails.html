@@ -17,7 +17,7 @@
 		<script src="js/javaScript.js"></script>
 		<link rel="stylesheet" href="css/styles.css">
 
-		<title>Parking System Home</title>
+		<title>Parking Details</title>
 	</head>
 
 	<body>
@@ -63,7 +63,7 @@
 								<h3 class="post-title">Standard Parking<span style="float:right; padding-right:10px;">$10/hr</span></h3>
 								<p><span>Size: </span>8' x 12'</p>
 								<p id="randomNum1"><span>Available Spaces: </span>1</p>
-								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+								<a id="fButton" onclick=" OpenModel();" class="btn btn-primary myBtn">Select</a>
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 								<h3 class="post-title">XL Parking<span style="float:right; padding-right:10px;">$15/hr</span></h3>
 								<p><span>Size: </span>15' x 30'</p>
 								<p id="randomNum2"><span>Available Spaces: </span>1</p>
-								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+								<a id="sButton" onclick="OpenModel();" class="btn btn-primary myBtn">Select</a>
 							</div>
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 								<h3 class="post-title">Accessible Parking<span style="float:right; padding-right:10px;">$7/hr</span></h3>
 								<p><span>Size: </span>9' x 13'</p>
 								<p id="randomNum3"><span>Available Spaces: </span>1</p>
-								<button onclick="OpenModel();" class="btn btn-primary myBtn">Select</button>
+								<a id="tButton" onclick="OpenModel();" class="btn btn-primary myBtn">Select</a>
 							</div>
 						</div>
 					</div>
@@ -186,7 +186,9 @@
 						</div>
 
 						<div class="homeButton">
-							<button type="submit" onclick="storeTimeGarage(); window.location.href='parkingDetails.html'" class="btn btn-primary">Submit</button>
+							<a href="confirmation.html" class="btn btn-primary">Place Order</a>
+							
+
 						</div>
 					</form>
 				</div>
@@ -198,7 +200,20 @@
 		<script>
 			document.getElementById("randomNum1").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 101) + "</p>";
 			document.getElementById("randomNum2").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 21) + "</p>";
-            document.getElementById("randomNum3").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 21) + "</p>";
+			document.getElementById("randomNum3").innerHTML = "<p>" + "<span>" + "Available Spaces: " + "</span>" + Math.floor(Math.random() * 21) + "</p>";
+
+			document.getElementById('fButton').addEventListener("click", function () {
+				localStorage.setItem("spaceType", "Standard Space");
+			});
+
+			document.getElementById('sButton').addEventListener("click", function () {
+				localStorage.setItem("spaceType", "XL Space");
+			});
+
+			document.getElementById('tButton').addEventListener("click", function () {
+				localStorage.setItem("spaceType", "Accessible Space");
+			});
+
 
 			/*document.getElementById("garageName").innerHTML = localStorage.getItem("garage");*/
 			var modal = document.getElementById("myModal");
@@ -225,13 +240,10 @@
 
 
 
-
-            
-
 		</script>
 
-		<footer class="footer">
+		<div class="footer">
 			<p>6205 Group 9</p>
-		</footer>
+		</div>
 	</body>
 </html>
