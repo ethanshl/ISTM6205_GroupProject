@@ -16,7 +16,7 @@ function storeTimeGarage() {
 	localStorage.setItem("garage", garage);
 	localStorage.setItem("startDateTime", startDateTime);
 	localStorage.setItem("endDateTime", endDateTime);
-	location.href = 'parkingDetails.html';
+	
 	
 };
 
@@ -33,4 +33,3 @@ function checkDate() {
   }
   return true;
 };
-
