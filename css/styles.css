@@ -39,6 +39,7 @@ span {
 	height: 40px;
 	position: relative;
 	margin-top: 105px;
+	margin-bottom:0;
 	background: #e9ecef;
 	text-align: center;
 	padding-top: 5px;
