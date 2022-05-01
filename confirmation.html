@@ -58,7 +58,7 @@
             <div class="jumbotron p-3">
                 <div class="row">
                     <div class="col">
-                        <h5 class="display-5"><span>Confirmation # </span>123456789</h5>
+                        <h5 id="confirmNum" class="display-5"><span>Confirmation # </span>123456789</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -91,10 +91,11 @@
 
 
     <script>
-        document.getElementById("garage").innerHTML = "<span class='d-block text-muted'>" + "Location" + "</span>" + "<span>" + localStorage.getItem("garage") + "</span>" + "</div>";
-        document.getElementById("spaceType").innerHTML = "<span class='d-block text-muted'>" + "Space Type" + "</span>" + "<span>" + localStorage.getItem("spaceType") + "</span>" + "</div>";
-        document.getElementById("startDateTime").innerHTML = "<span class='d-block text-muted'>" + "Arrival Date" + "</span>" + "<span>" + localStorage.getItem("startDateTime") + "</span>" + "</div>";
-        document.getElementById("endDateTime").innerHTML = "<span class='d-block text-muted'>" + "Departure Date" + "</span>" + "<span>" + localStorage.getItem("endDateTime") + "</span>" + "</div>";
+        document.getElementById("confirmNum").innerHTML = "<span>" + "Confirmation # " + "</span>" + Math.floor(Math.random() * 999999999);
+        document.getElementById("garage").innerHTML = "<span class='d-block text-muted'>" + "Location" + "</span>" + "<span>" + localStorage.getItem("garage") + "</span>" ;
+        document.getElementById("spaceType").innerHTML = "<span class='d-block text-muted'>" + "Space Type" + "</span>" + "<span>" + localStorage.getItem("spaceType") + "</span>";
+        document.getElementById("startDateTime").innerHTML = "<span class='d-block text-muted'>" + "Arrival Date" + "</span>" + "<span>" + localStorage.getItem("startDateTime") + "</span>" ;
+        document.getElementById("endDateTime").innerHTML = "<span class='d-block text-muted'>" + "Departure Date" + "</span>" + "<span>" + localStorage.getItem("endDateTime") + "</span>";
 
     </script>
 
